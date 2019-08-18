@@ -1,8 +1,19 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.sap.odata.android'
+
+buildscript {
+    repositories {
+        mavenLocal()
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath group: 'com.sap.cloud.android', name: 'odata-android-gradle-plugin', version:sdkVersion
+    }
+}
 
 android {
     compileSdkVersion 29
@@ -27,6 +38,18 @@ android {
     }
 }
 
+odata {
+    verbose true
+    services {
+        // connection id: com.sap.edm.sampleservice.v2
+        espmcontainer {
+            schemaFile file("src/main/res/xml/metadata.xml")
+            packageName "datatrain.mietercockpitnative.tp_srv"
+            serviceClass "TP_SRV"
+        }
+    }
+}
+
 configurations {
     all {
         exclude module: 'httpclient'
@@ -47,6 +70,20 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Android framework dependencies
+    implementation group: 'com.android.support', name: 'appcompat-v7', version: androidSupportVersion
+    implementation group: 'com.android.support', name: 'support-v4', version: androidSupportVersion
+    implementation group: 'com.android.support', name: 'recyclerview-v7', version: androidSupportVersion
+    implementation group: 'com.android.support', name: 'design', version: androidSupportVersion
+    implementation group: 'com.android.support', name: 'preference-v7', version: androidSupportVersion
+
+    // Android Architecture Components
+    implementation group: 'android.arch.lifecycle', name: 'common-java8', version: androidArchVersion
+    implementation group: 'android.arch.lifecycle', name: 'extensions', version: androidArchVersion
+
+    // JUnit dependency
+    testImplementation 'junit:junit:4.12'
 
     // SAP Cloud Android SDK dependencies
     implementation group: 'com.sap.cloud.android', name: 'fiori', version: sdkVersion

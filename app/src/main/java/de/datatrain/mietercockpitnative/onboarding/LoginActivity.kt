@@ -150,10 +150,10 @@ class LoginActivity : AppCompatActivity() {
 
         val lss = LaunchScreenSettings()
         lss.isDemoAvailable = false
-        lss.launchScreenTitles = arrayOf("Wiz App")
-        lss.launchScreenHeadline = "Now with Flows!"
-        lss.launchScreenDescriptions = arrayOf("See how easy it is to onboard with Flows")
-        lss.launchScreenImages = intArrayOf(R.drawable.graphic_airplane)
+        lss.launchScreenTitles = arrayOf("Mieterapp")
+        lss.launchScreenHeadline = "Willkommen bei der Mieterapp."
+        lss.launchScreenDescriptions = arrayOf("Bitte melden sie Sich mit Ihren Login Daten an")
+        lss.launchScreenImages = intArrayOf(R.drawable.logo)
         welcomeScreenStep.setWelcomeScreenSettings(lss)
 
         // adds the QR code activation screen during onboarding
