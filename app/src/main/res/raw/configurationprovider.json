@@ -1,0 +1,15 @@
+{
+  "auth": [{
+    "type": "oauth2",
+    "config": {
+      "oauth2.authorizationEndpoint": "https://oauthasservices-a71f9a2af.hana.ondemand.com/oauth2/api/v1/authorize",
+      "oauth2.tokenEndpoint": "https://oauthasservices-a71f9a2af.hana.ondemand.com/oauth2/api/v1/token",
+      "oauth2.clientID": "794d2747-18f4-46df-8665-a5b587ba9647",
+      "oauth2.grantType": "authorization_code"
+    }
+  }],
+  "host":"mobile-a71f9a2af.hana.ondemand.com",
+  "port":443,
+  "protocol":"https",
+  "appID":"de.datatrain.mietercockpitnative"
+}

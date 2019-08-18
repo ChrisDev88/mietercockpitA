@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Mietercockpit</string>
+
+    <string name="butonLogin">Anmelden</string>
+    <string name="textOder">oder</string>
+    <string name="butonRegister">Registrieren</string>
+
+    <string name="registerHeadline">Registrieren</string>
+    <string name="registerDescription">Im Rahmen der Registrierung benötigen wir zunächst Angaben, um Sie als unseren
+        Mieter zu identifizieren. Darüber hinaus können Sie hier Ihre Login-Informationen anpassen.
+    </string>
+    <string name="registerTextIdentifikation">Identifikation</string>
+    <string name="registerTextVertrag">Mietvertragsnummer</string>
+    <string name="registerTextVertragStart">Vertragsbeginn</string>
+    <string name="registerTextNameFirst">Vorname</string>
+    <string name="registerTextNameLast">Nachname</string>
+    <string name="registerButtonSubmit">Informationen absenden</string>
+    <string name="registerButtonCancel">Abbrechen</string>
+
+</resources>

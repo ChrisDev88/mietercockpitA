@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
+    defaultConfig {
+        applicationId "de.datatrain.mietercockpitnative"
+        minSdkVersion 26
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+}
+
+configurations {
+    all {
+        exclude module: 'httpclient'
+        exclude module: 'commons-logging'
+        exclude module: 'opengl-api'
+        exclude module: 'xmlParserAPIs'
+        exclude module: 'xpp3'
+        exclude module: 'android'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.core:core-ktx:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // SAP Cloud Android SDK dependencies
+    implementation group: 'com.sap.cloud.android', name: 'fiori', version: sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'flows', version: sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'foundation', version: sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'odata', version: sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'offline-odata', version: sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'onboarding', version: sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'onboardingflows-basicauth', version: sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'onboardingflows-oauth', version: sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'onboardingflows-saml', version: sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'onboardingflows-storemanager', version: sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'onboardingflows-welcomescreen', version: sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'onboardingflows-eulascreen', version: sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'onboardingflows-logging', version: sdkVersion
+    // Supported in version 2.1.0 and higher
+    implementation group: 'com.sap.cloud.android', name: 'qrcodereader', version: sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'google-vision', version: sdkVersion
+
+    // Logging dependency
+    implementation 'org.slf4j:slf4j-api:1.7.25'
+    implementation 'com.github.tony19:logback-android:2.0.0'
+}
