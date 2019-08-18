@@ -6,10 +6,7 @@
 
     <ImageView android:id="@+id/splashscreen" android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:src="@mipmap/ic_launcher_round"/>
+               android:src="@drawable/logo"/>
 
-    <TextView android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:text="Wiz App"
-              android:textAlignment="center"/>
+
 </LinearLayout>
