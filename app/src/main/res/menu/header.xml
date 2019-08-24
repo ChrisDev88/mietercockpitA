@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- "Mark Favorite", should appear as action button if possible -->
+    <item
+        android:id="@+id/action_user_notifications"
+        android:icon="@drawable/baseline_notifications_black_18dp"
+        android:title="Nachrichten"
+        app:showAsAction="ifRoom"
+        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"/>
+
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        app:showAsAction="never"/>
+
+</menu>

@@ -55,6 +55,7 @@ import ch.qos.logback.classic.Level
 import com.sap.cloud.mobile.flow.onboarding.oauth.OAuthStep
 import com.sap.cloud.mobile.flow.onboarding.oauth.OAuthStoreStep
 import com.sap.cloud.mobile.flow.onboarding.saml.SamlStep
+import de.datatrain.mietercockpitnative.TileActivity
 import okhttp3.OkHttpClient
 import com.sap.cloud.mobile.foundation.authentication.OAuth2Configuration as OAuth2Configuration1
 
@@ -107,7 +108,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        supportActionBar!!.hide()
+        //supportActionBar!!.hide()
         setContentView(R.layout.splash_screen)
 
         initializeLogging(Level.TRACE)
@@ -208,7 +209,7 @@ class LoginActivity : AppCompatActivity() {
                 LOGGER.debug("Successfully onboarded")
 
                 // remove the splash screen and replace it with the actual working app screen
-                supportActionBar!!.show()
+                //supportActionBar!!.show()
                 setContentView(R.layout.activity_tile)
                 // save the onboarded status
                 LOGGER.debug("changing isOnboarded to true");
@@ -261,8 +262,10 @@ class LoginActivity : AppCompatActivity() {
 
             override fun onSuccess(result: FlowContext) {
                 initializeLogging(flowContext!!.policy.logLevel)
-                supportActionBar!!.show()
-                setContentView(R.layout.activity_tile)
+                //supportActionBar!!.show()
+                //setContentView(R.layout.activity_tile)
+                val int1 = Intent(this@LoginActivity, TileActivity::class.java)
+                startActivity(int1)
                 LOGGER.debug("Successfully restored");
                 LOGGER.warn("Log level after restore is: " + Logging.getRootLogger().getLevel().toString());
             }

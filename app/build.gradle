@@ -11,7 +11,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath group: 'com.sap.cloud.android', name: 'odata-android-gradle-plugin', version:sdkVersion
+        classpath group: 'com.sap.cloud.android', name: 'odata-android-gradle-plugin', version: sdkVersion
     }
 }
 

@@ -7,12 +7,18 @@ import com.sap.cloud.mobile.flow.onboarding.SecureStore
 import com.sap.cloud.mobile.flow.onboarding.SecureStoreException
 import com.sap.cloud.mobile.flow.onboarding.storemanager.PasscodePolicyStoreStep
 import com.sap.cloud.mobile.flow.onboarding.storemanager.StoreManagerStep
+import com.sap.cloud.mobile.foundation.authentication.BasicAuthDialogAuthenticator
 import com.sap.cloud.mobile.foundation.common.EncryptionError
 import com.sap.cloud.mobile.foundation.common.EncryptionUtil
+import com.sap.cloud.mobile.foundation.networking.AppHeadersInterceptor
+import com.sap.cloud.mobile.foundation.networking.WebkitCookieJar
 import com.sap.cloud.mobile.foundation.securestore.FileMissingException
 import com.sap.cloud.mobile.foundation.securestore.OpenFailureException
 import com.sap.cloud.mobile.foundation.securestore.SecureKeyValueStore
+import com.sap.cloud.mobile.odata.OnlineODataProvider
+import datatrain.mietercockpitnative.tp_srv.TP_SRV
 import de.datatrain.mietercockpitnative.MyApplication
+import okhttp3.OkHttpClient
 import java.net.MalformedURLException
 import java.util.Date
 import java.util.GregorianCalendar
@@ -26,6 +32,11 @@ object StoreHelper {
     private var authStore: SecureKeyValueStore? = null
 
     private val LOGGER = LoggerFactory.getLogger(MyApplication::class.java)
+
+    private val serviceURL: String = "https://mobile-a71f9a2af.hana.ondemand.com";
+    private val appID: String = "de.datatrain.mietercockpitnative";
+    private val connectionID: String = "DT1TPOdata";
+    private var myDataProvider: OnlineODataProvider? = null
 
     private fun policyStoreNullCheck(context: Context) {
         if (policyStore == null) {
@@ -72,6 +83,22 @@ object StoreHelper {
             e.printStackTrace()
         }
 
+    }
+
+    fun getService(deviceID: String) : TP_SRV? {
+
+        var myOkHttpClient = OkHttpClient.Builder()
+            .addInterceptor(AppHeadersInterceptor(appID, deviceID, "1.0"))
+            .authenticator(BasicAuthDialogAuthenticator())
+            .cookieJar(WebkitCookieJar())
+            .build()
+
+        myDataProvider = OnlineODataProvider(
+            "ESPMContainer",
+            "$serviceURL/$connectionID", myOkHttpClient
+        )
+
+        return TP_SRV(myDataProvider!!)
     }
 
     fun isOnboarded(context: Context): Boolean {

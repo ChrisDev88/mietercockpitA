@@ -7,6 +7,9 @@
         <Schema xml:lang="de"
                 xmlns="http://schemas.microsoft.com/ado/2008/09/edm" sap:schema-version="1" Namespace="DATRAIN.TP_SRV">
             <EntityType sap:content-version="1" Name="tile">
+                <Key>
+                    <PropertyRef Name="task"/>
+                </Key>
                 <Property Name="task" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Funktion im JSON Fil" sap:unicode="false" MaxLength="36" Nullable="false" Type="Edm.String"/>
                 <Property Name="parentTask" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="Funktion im JSON Fil" sap:unicode="false" MaxLength="36" Nullable="false" Type="Edm.String"/>
                 <Property Name="pageId" sap:filterable="false" sap:sortable="false" sap:updatable="false" sap:creatable="false" sap:label="PageID" sap:unicode="false" MaxLength="32" Nullable="false" Type="Edm.String"/>

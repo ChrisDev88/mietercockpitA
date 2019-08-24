@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Mietercockpit</string>
-
+    <string name="action_settings">Settings</string>
     <string name="butonLogin">Anmelden</string>
     <string name="textOder">oder</string>
     <string name="butonRegister">Registrieren</string>
@@ -16,5 +16,11 @@
     <string name="registerTextNameLast">Nachname</string>
     <string name="registerButtonSubmit">Informationen absenden</string>
     <string name="registerButtonCancel">Abbrechen</string>
+    <string name="config_data_error_title">Test</string>
+    <string name="config_data_no_data_description">test2</string>
+    <string name="config_data_bad_service_url_description">test3</string>
+    <string name="config_data_build_json_description">test4</string>
+    <string name="config_data_bad_field_description">test5</string>
+    <string name="ok">OK</string>
 
 </resources>

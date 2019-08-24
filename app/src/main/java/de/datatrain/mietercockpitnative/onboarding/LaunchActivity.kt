@@ -22,7 +22,6 @@ class LaunchActivity : AppCompatActivity() {
         this.getWindow().setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
-
         isOnboarded = StoreHelper.isOnboarded(application);
         if(isOnboarded){
             val int1 = Intent(this@LaunchActivity, LoginActivity::class.java)
