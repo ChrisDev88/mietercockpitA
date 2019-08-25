@@ -35,9 +35,9 @@ class TileActivity : BaseActivity() {
     }
 
     fun showTiles(tiles: List<Tile>) {
-        //var recycler: RecyclerView = findViewById(de.datatrain.mietercockpitnative.R.id.tileView)
-        //recycler.setLayoutManager(GridLayoutManager(this, 4))
-        //recycler.adapter = TileAdapter(tiles)
+        var recycler: RecyclerView = findViewById(de.datatrain.mietercockpitnative.R.id.tileView)
+        recycler.setLayoutManager(GridLayoutManager(this, 1))
+        recycler.adapter = TileAdapter(tiles)
     }
 
 }

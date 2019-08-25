@@ -23,4 +23,8 @@
     <string name="config_data_bad_field_description">test5</string>
     <string name="ok">OK</string>
 
+    <string name="homeWelcome">Herzlich willkommen, Emma Databerg</string>
+    <string name="homeTitle">Was können wir für sie tun?</string>
+    <string name="homeText">Für Ihre Zufriedenheit setzen wir alles in bewegung. Nutzen Sie unsere neue App, um aktuelle Informationen zu erhalten und uns Ihre Anliegen mitzuteilen.</string>
+
 </resources>

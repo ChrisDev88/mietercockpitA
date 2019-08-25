@@ -1,5 +1,6 @@
 package de.datatrain.mietercockpitnative
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -45,6 +46,7 @@ open class BaseActivity : AppCompatActivity() {
 
                 Log.d("myDebug", item.title.toString())
                 when (item.title) {
+                    "Startseite" -> startActivityHome()
                     "Aktuelles" -> Toast.makeText(applicationContext, "Toolbar", Toast.LENGTH_SHORT).show()
                     "Meine Anliegen" -> startActivityMeineAnliegen()
                     "Mein Mietvertrag" -> startActivityMeinMietvertrag()
@@ -72,9 +74,14 @@ open class BaseActivity : AppCompatActivity() {
         //startActivityForResult(intent,1)
     }
 
+    private fun startActivityHome() {
+        val intent = Intent(this, TileActivity::class.java)
+        startActivityForResult(intent,1)
+    }
+
     private fun startActivityMeinMietvertrag() {
-        //val intent = Intent(this, TenantSearch::class.java)
-        //startActivityForResult(intent,1)
+        val intent = Intent(this, ContractActivity::class.java)
+        startActivityForResult(intent,1)
     }
 
 

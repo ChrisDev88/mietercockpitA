@@ -10,12 +10,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".BaseActivity"></activity>
-        <activity android:name=".TileActivity"
-                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
-        <activity android:name=".onboarding.LoginActivity"></activity>
-        <activity android:name=".onboarding.RegisterActivity"></activity>
+        <activity android:name=".ContractActivity"></activity>
+        <activity android:name=".BaseActivity" />
+        <activity
+                android:name=".TileActivity"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".onboarding.LoginActivity" />
+        <activity android:name=".onboarding.RegisterActivity" />
         <activity android:name=".onboarding.LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
